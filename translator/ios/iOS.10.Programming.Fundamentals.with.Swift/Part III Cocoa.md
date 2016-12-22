@@ -1,7 +1,3 @@
-The Cocoa Touch frameworks provide the general capabilities needed by any iOS
-application. Buttons can be tapped, text can be read, screens of interface can succeed
-one another, because Cocoa makes it so. To use the framework, you must learn to let
-the framework use you. You must put your code in the right place so that it will be
-called at the right time. You must fulfill certain obligations that Cocoa expects of you.
-You master Cocoa by being Cocoa’s obedient servant. In this part of the book, that’s
-what you’ll learn to do.
+Cocoa Touch框架提供了任何iOS应用需要的通用功能。按钮可以被触碰，文本可以被读取，屏幕界面可以连续衔接，这些都是Cocoa提供的。如果想使用这个框架，你必须试着学习让这个框架使用你。你必须将你的代码放在合适的位置，这样就会在合适的时间被调用。你必须完成Cocoa期望你完成的一些义务。你通过成为Cocoa的忠诚仆人来掌握Cocoa。在书的这一部分，你将学习以下内容。
+- 第10章 描述Object-C语言中的特点继承，类目和协议这些特点在Cocoa中是如何被组织和构建的。紧接着介绍了Cocoa内部的一些重要的对象类型。这一章包括描述Cocoa的键值编码和探究基类NSObject如何被组织。
+- 
