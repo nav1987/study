@@ -25,7 +25,7 @@
 
 1. 在我们的空窗口例子项目中，选择文件-》新建，指定iOS → Source → Cocoa Touch Class，继承UIView，名字叫MyHorizLine。XCode创建了MyHorizLine.swift。确保它是应用的目标。
 2. 在MyHorizLine.swift。中替换一下内容：
-···swift
+```
 required init?(coder aDecoder: NSCoder) {
 super.init(coder:aDecoder)
 self.backgroundColor = .clear
@@ -36,7 +36,7 @@ c.move(to:CGPoint(x: 0, y: 0))
 c.addLine(to:CGPoint(x: self.bounds.size.width, y: 0))
 c.strokePath()
 } 
-···
+```
 3. 编辑storyboard。在Object library中找到UIView，将这个视图对象拖到画布上。你可以调整它让它更窄一些。
 4. 完成以上之后，选中刚才拖动的UIView，使用Identity inspector将类改为MyHorizLine。
 
