@@ -24,8 +24,9 @@
 　　例如，假设你想让我们的窗口来绘制水平线。在Cocoa中没有现成的水平线接口插件。我们需要自己来完成绘制水平线。我们来试一下：  
 
 1. 在我们的空窗口例子项目中，选择文件-》新建，指定iOS → Source → Cocoa Touch Class，继承UIView，名字叫MyHorizLine。XCode创建了MyHorizLine.swift。确保它是应用的目标。
-2. 在MyHorizLine.swift。中替换一下内容
-     required init?(coder aDecoder: NSCoder) {
+2. 在MyHorizLine.swift。中替换一下内容：
+    ''' swift 
+	required init?(coder aDecoder: NSCoder) {
     super.init(coder:aDecoder)
     self.backgroundColor = .clear
     }
@@ -34,7 +35,8 @@
     c.move(to:CGPoint(x: 0, y: 0))
     c.addLine(to:CGPoint(x: self.bounds.size.width, y: 0))
     c.strokePath()
-    }
+    } 
+	'''
 3. 编辑storyboard。在Object library中找到UIView，将这个视图对象拖到画布上。你可以调整它让它更窄一些。
 4. 完成以上之后，选中刚才拖动的UIView，使用Identity inspector将类改为MyHorizLine。
 
