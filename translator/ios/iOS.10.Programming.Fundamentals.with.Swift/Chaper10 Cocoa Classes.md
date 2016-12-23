@@ -25,7 +25,7 @@
 
 1. 在我们的空窗口例子项目中，选择文件-》新建，指定iOS → Source → Cocoa Touch Class，继承UIView，名字叫MyHorizLine。XCode创建了MyHorizLine.swift。确保它是应用的目标。
 2. 在MyHorizLine.swift。中替换一下内容：
-```
+```swift
 required init?(coder aDecoder: NSCoder) {
 super.init(coder:aDecoder)
 self.backgroundColor = .clear
