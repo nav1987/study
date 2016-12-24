@@ -41,3 +41,20 @@ c.strokePath()
 4. 完成以上之后，选中刚才拖动的UIView，使用Identity inspector将类改为MyHorizLine。
 
 　　在模拟其中运行应用，你将在看着在MyHorizLine实例的上部绘制了水平线。我们的实例自己绘制了水平线，因为我们继承UIView来完成了这些。
+
+在这个例子中，没有处理的UIView没有绘制功能。所以没有必要调用父类的绘制方法UIView中draw(_:)的默认实现没有做任何事情。你同样可以继承UIView的子类来改变原先的绘制行为。例如，UILabel为我们提供了两个方法来完成此操作。drawText(in:) 和 textRect(forBounds:limitedToNumberOfLines:)明确的告诉我们：这个方法可以被子类重写如果想改变标签的而绘制方式。隐含告诉我们这些方法会在标签绘制的时候被Cocoa自动调用。因此我们可以继承UILabel，在子类的中实现这些方法来更改如何绘制方法。
+
+　　这里有个例子，是我的一个应用中用到的，我继承了UILabel来定制矩形边框绘制，内容离边框有一定的距离，通过重写drawText(in:)来完成的。文档中告诉我们，在你重写的方法中你可以进一步配置当前的绘图环境，然后再调用父类方法来完成真正的绘制。我们来试一下：  
+
+1. 在空的窗体项目中，创建一个新的类文件，MyBoundedLabel继承UILabel。
+2. 在MyBoundedLabel.swift中在类的定义中插入如下代码：
+···swift
+let context = UIGraphicsGetCurrentContext()!
+context.stroke(self.bounds.insetBy(dx: 1.0, dy: 1.0))
+super.drawText(in: rect.insetBy(dx: 5.0, dy: 5.0))
+}
+···
+
+3. 编辑storyboard，添加一个UILabel到界面上，选中它，在Identity inspector中将类设置为MyBoundedLabel。
+
+构建运行应用，你将看到矩形如何被绘制，以及标签文本向内部偏移。
