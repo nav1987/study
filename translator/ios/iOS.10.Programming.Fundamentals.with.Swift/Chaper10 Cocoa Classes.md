@@ -48,12 +48,12 @@ c.strokePath()
 
 1. 在空的窗体项目中，创建一个新的类文件，MyBoundedLabel继承UILabel。
 2. 在MyBoundedLabel.swift中在类的定义中插入如下代码：
-···swift
+```swift
 let context = UIGraphicsGetCurrentContext()!
 context.stroke(self.bounds.insetBy(dx: 1.0, dy: 1.0))
 super.drawText(in: rect.insetBy(dx: 5.0, dy: 5.0))
 }
-···
+```
 
 3. 编辑storyboard，添加一个UILabel到界面上，选中它，在Identity inspector中将类设置为MyBoundedLabel。
 
